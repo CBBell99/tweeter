@@ -6,6 +6,7 @@
   <title>Tweeter - Home Page</title>
 
   <!-- External CSS -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,6 +22,7 @@
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css">
+  <link rel="stylesheet" href="/styles/new-tweet.css">
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -31,17 +33,12 @@
 <body>
   <!-- Top nav bar (fixed) -->
   <nav class="navbar">
-
     <span id="logo">
       <h2>tweeter</h2>
     </span>
-    <div id="new-tweet">
-
+    <div id="write-new-tweet">
       <p><b>Write</b> a new tweet</p>
-
-      <i  class="fas fa-angle-double-down"></i>
-    </div>
-
+      <i class="fas fa-angle-double-down"></i>
     </div>
   </nav>
 
@@ -55,13 +52,22 @@
     </div>
 </header>
   <!-- Page-specific (main) content here -->
-  <main class="container">
-<!-- <h1>Some text</h1> -->
-<!-- <h2>Some text</h2> -->
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea ad maiores eaque provident veniam illum officia libero, corrupti facilis quisquam quia iusto ipsam, consectetur maxime sequi. Expedita repellat ratione nostrum.
-Voluptas, natus nemo possimus beatae molestias nesciunt eveniet omnis quidem laborum quasi aspernatur incidunt in praesentium debitis ducimus repellat magni aperiam distinctio velit ex repudiandae voluptatibus eius impedit. Molestias, tempora!
-Minus ratione perferendis quos suscipit facilis autem similique, cupiditate voluptates exercitationem magni illum hic accusamus ipsum debitis! Incidunt, inventore ab, cum doloremque odio ipsum saepe nihil harum, commodi rerum veniam!</p>
-  </main>
+<main class="container">
+ 
+  <section class="new-tweet">
+    <h2>Compose Tweet</h2>
+    <form action="/tweets/" method="POST">
+      <div class="tweet-top">
+      <label for="tweet-text">What are you humming about?</label>
+      <textarea name="text" id="tweet-text"></textarea>
+      </div>
+      <div class="tweet-bottom">
+        <button id="tweet-button" type="submit">Tweet</button>
+        <output name="counter" class="counter" for="tweet-text">140</output>
+      </div>
+    </form>
+  </section>
+</main>
 </body>
 
 </html>
