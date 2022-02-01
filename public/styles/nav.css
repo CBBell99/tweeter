@@ -6,8 +6,10 @@ nav  {
   height: 120px;
   width: 100%;
   display: flex;
+  margin-top: -120px;
   justify-content: space-between;
   z-index: 1;
+  position: fixed;
 }
 #logo {
   font-family: "Bungee", sans-serif;
@@ -16,7 +18,7 @@ nav  {
 
 }
 
-#new-tweet {
+#write-new-tweet {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -24,7 +26,7 @@ nav  {
   margin-bottom: 10px;
 }
   
-#new-tweet p{
+#write-new-tweet p{
   margin-bottom: 5px;
 }
 
