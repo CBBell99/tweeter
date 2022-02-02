@@ -9,9 +9,9 @@ $(document).ready(function(){
     counter.text(remainingChars);
 
     if(remainingChars < 0) {
-      counter.css("color", "red");
+      counter.addClass("red-text");
     } else {
-      counter.css("color", "#545149");
+      counter.removeClass("red-text");
     }
   });
 });
