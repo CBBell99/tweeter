@@ -1,10 +1,11 @@
 /*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+* Client-side JS logic goes here
+* jQuery is already loaded
+* Reminder: Use (and do all your DOM work in) jQuery's document ready function
+*/
 
-const tweetData = [
+$(document).ready(function(){
+const data = [
   {
     "user": {
       "name": "Newton",
@@ -28,42 +29,61 @@ const tweetData = [
     }
 ];
 
-
-const renderTweets = function (){
-
-};
-
 const createTweetElement = function (data){
+  const timeAgo = timeago.format(data.created_at) 
   let $tweet =  (`
-<article class="tweets">
-    <header>
-      <div>
-        <img src="${data.user.avatars}">
-        <span>"${data.user.name}"</span>
-      </div>
-        <span id="userhandle">${data.user.handle}</span>
-    </header>
-    <div class="tweet-text">
-        <p>${data.user.content}</p>
-    </div>
-    <footer class="footer-info">
-      <p class="time-ago">${data.user.created_at}</p>
-      <div class="icons">
-        <i class="fa-solid fa-flag"></i>
-        <i class="fa-solid fa-retweet"></i>
-        <i class="fa-solid fa-heart"></i>
+    <article class="tweets">
+      <header>
+        <div>
+          <img src="${data.user.avatars}">
+          <span>"${data.user.name}"</span>
         </div>
-    </footer>
-  </article>  
+          <span id="userhandle">${data.user.handle}</span>
+      </header>
+        <div class="tweet-text">
+          <p>${data.content.text}</p>
+        </div>
+      <footer class="footer-info">
+        <p class="time-ago">${timeAgo}</p>
+        <div class="icons">
+          <i class="fa-solid fa-flag"></i>
+          <i class="fa-solid fa-retweet"></i>
+          <i class="fa-solid fa-heart"></i>
+        </div>
+      </footer>
+    </article>  
   `);
   return $tweet;
 };
 
+const renderTweets = function (data){
+  for(let tweet of data){
+    let oldTweet = createTweetElement(tweet);
+     $('.tweets-container').append(oldTweet);
+    }
+  };
+    
+  renderTweets(data);
 
-const $tweet = createTweetElement(tweetData);
+  $('#incoming-tweet').submit(function(event){
+    event.preventDefault();
+    console.log("form had been submitted")
+    console.log(this)
+    const data = $('#incoming-tweet').serialize();
 
-$(document).ready(function(){
-// Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-$('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data: data
+    })
+  });
 })
+
+
+// const $tweet = createTweetElement(tweetData);
+
+// $(document).ready(function(){
+// // Test / driver code (temporary)
+// console.log($tweet); // to see what it looks like
+// $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+// })
