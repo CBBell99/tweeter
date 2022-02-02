@@ -1,6 +1,6 @@
  nav  {
-    height: 120px;
- }
+     height: 120px;
+ } 
   
 nav .navbar{
   background-color: #4056a1;
@@ -16,7 +16,7 @@ nav .navbar{
  #logo { 
   font-family: "Bungee", sans-serif;
   font-size: 24px;
-  padding: 1.5em;
+  padding:1.5em;
 
 }
 #write-new-tweet {
@@ -27,11 +27,8 @@ nav .navbar{
   margin-bottom: 10px;
 }
   
-#write-new-tweet p{
-  margin-bottom: 5px;
-}
 
-.fas{
+#write-new-tweet .fas{
   color: red;
   align-self: center;
 }  
