@@ -23,11 +23,14 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css">
   <link rel="stylesheet" href="/styles/new-tweet.css">
+  <link rel="stylesheet" href="/styles/tweets.css">
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript"src="/scripts/composer-char-counter.js"></script>
 </head>
 
 <body>
@@ -42,11 +45,11 @@
     </div>
   </nav>
 
-  <header>
+  <header class="avatar">
     <div class="avatar-img">
         <img src="/images/profile-hex.png"> 
     </div>
-    <br>
+    
     <div>
         <h2>Your Name</h2>
     </div>
@@ -58,16 +61,40 @@
     <h2>Compose Tweet</h2>
     <form action="/tweets/" method="POST">
       <div class="tweet-top">
-      <label for="tweet-text">What are you humming about?</label>
-      <textarea name="text" id="tweet-text"></textarea>
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text"></textarea>
       </div>
       <div class="tweet-bottom">
         <button id="tweet-button" type="submit">Tweet</button>
-        <output name="counter" class="counter" for="tweet-text">140</output>
+        <output name="counter"  class="counter" for="tweet-text">140</output>
       </div>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi harum veniam aliquid ducimus vitae esse incidunt. Non rem nihil commodi quia nam praesentium consectetur, aspernatur totam facilis voluptatum illum sed libero? Odio harum autem dolorum ipsum ad sed, cum laudantium laborum voluptatum! Dolorem pariatur laboriosam magni libero tempora, facere architecto.</p>
-    </form>
+    </form>  
   </section>
+
+<section class="tweet-container">
+  <article >
+    <header>
+      <div>
+        <img src="/images/female-avatar.png">
+        <span>Rhoda Jacobs</span>
+      </div>
+        <span id="userhandle">@MrsJacobs</span>
+    </header>
+    <div class="tweet-text">
+        <p>Hello World!</p>
+    </div>
+    <footer class="footer-info">
+      <p class="time-ago">10 days ago</p>
+      <div class=icons>
+        <i class="fa-solid fa-flag"></i>
+        <i class="fa-solid fa-retweet"></i>
+        <i class="fa-solid fa-heart"></i>
+        </div>
+    </footer>
+  </article>    
+</section>
+      
+    </form>
 </main>
 </body>
 
