@@ -1,31 +1,35 @@
-.tweet-container{
+.tweets{
   width: 95%;
   margin: auto;
   margin-top: 15px;
   height: 200px;
   background-color: #f4f1ec;
-  border: 2px solid #545149 ;
+  border: 2px solid #545149;
+  border-radius: 5px;
 }
 
-article  {
+.tweets:hover{
+  box-shadow: 5px 5px #9b9999;
+}
+
+article .tweets {
   margin-top: 10px;
 }
 
-.tweet-container article header{
+.tweets header{
   padding: 15px;
   display: flex;
   justify-content: space-between;
   align-content: center;
 }
 
-.tweet-container #userhandle{
-opacity: 0.70;
+.tweets #userhandle{
+  opacity: 0.70;
 }
 
-.tweet-container .tweet-text{
+.tweets .tweet-text{
   width: 95%;
   margin: auto;
-  /* margin-bottom: 15px; */
   border-bottom: 2px solid #545149;
 }
 
