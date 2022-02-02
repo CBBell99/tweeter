@@ -18,6 +18,10 @@ article  {
   align-content: center;
 }
 
+.tweet-container #userhandle{
+opacity: 0.70;
+}
+
 .tweet-container .tweet-text{
   width: 95%;
   margin: auto;
