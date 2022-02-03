@@ -6,22 +6,30 @@
 
 $(document).ready(function(){
 
+  // escape function
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
+
 const createTweetElement = function (data){
-  const timeAgo = timeago.format(data.created_at) 
+  const timeAgo = timeago.format
   let $tweet =  (`
     <article class="tweets">
       <header>
         <div>
-          <img src="${data.user.avatars}">
+          <img src="${escape(data.user.avatars)}">
           <span>"${data.user.name}"</span>
         </div>
-          <span id="userhandle">${data.user.handle}</span>
+          <span id="userhandle">${escape(data.user.handle)}</span>
       </header>
         <div class="tweet-text">
-          <p>${data.content.text}</p>
+          <p>${escape(data.content.text)}</p>
         </div>
       <footer class="footer-info">
-        <p class="time-ago">${timeAgo}</p>
+        <p class="time-ago">${timeAgo(data.created_at)}</p>
         <div class="icons">
           <i class="fa-solid fa-flag"></i>
           <i class="fa-solid fa-retweet"></i>
@@ -39,7 +47,6 @@ const renderTweets = function (data){
      $('.tweets-container').prepend(oldTweet);
     }
   };
-    // loadTweets();
   
   const loadTweets = function(){
     $.ajax({
@@ -57,12 +64,12 @@ const renderTweets = function (data){
     event.preventDefault();
     console.log("form had been submitted")
     const data = $('#incoming-tweet').serialize();
-    
+    let tweetLength = $('#tweet-text').val().length
     // console.log($('#tweet-text').val().length)
-    if($('#tweet-text').val().length === 0){ 
+    if(tweetLength === 0){ 
       return alert('You cannot post an empty tweet');
     }
-    if($('#tweet-text').val().length > 140){ 
+    if(tweetLength > 140){ 
       return alert('You cannot post over 140 characters');
     }
     $.ajax({
