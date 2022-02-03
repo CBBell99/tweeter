@@ -42,6 +42,7 @@ const createTweetElement = function (data){
 };
 
 const renderTweets = function (data){
+  $('.tweets-container').empty();
   for(let tweet of data){
     let oldTweet = createTweetElement(tweet);
      $('.tweets-container').prepend(oldTweet);
@@ -58,6 +59,7 @@ const renderTweets = function (data){
       renderTweets(data);
     })
   };
+
   loadTweets();
   
   $('#incoming-tweet').submit(function(event){
@@ -65,15 +67,15 @@ const renderTweets = function (data){
     console.log("form had been submitted")
     const data = $('#incoming-tweet').serialize();
     let tweetLength = $('#tweet-text').val().length
+    
     $('.error').slideUp().text('')
 
     if(tweetLength === 0){ 
-      return $('.error').html('<i class="fa-solid fa-triangle-exclamation"></i>  You cannot post an empty tweet').slideDown();
+      return $('.error').html('<i class="fa-solid fa-triangle-exclamation"></i>  You cannot post an empty tweet').slideDown(300);
     }
     if(tweetLength > 140){ 
-      return $('.error').html('<i class="fa-solid fa-triangle-exclamation"></i>You cannot post over 140 characters').slideDown();
+      return $('.error').html('<i class="fa-solid fa-triangle-exclamation"></i>You cannot post over 140 characters').slideDown(300);
     }
-
     $('form').trigger('reset');
 
     $.ajax({
@@ -82,7 +84,12 @@ const renderTweets = function (data){
       data: data
     })
       .then(() =>{
-      loadTweets();
+      $('.counter').html('140');  
+      })
+      .then(()=>{
+        loadTweets();
+
+      })
     })
 
   
@@ -93,7 +100,6 @@ const renderTweets = function (data){
 // renderTweets(data);
 
 
-})
 
 
 // const $tweet = createTweetElement(tweetData);
