@@ -65,22 +65,23 @@ const renderTweets = function (data){
     console.log("form had been submitted")
     const data = $('#incoming-tweet').serialize();
     let tweetLength = $('#tweet-text').val().length
-    // console.log($('#tweet-text').val().length)
+    $('.error').slideUp().text('')
+
     if(tweetLength === 0){ 
-      return alert('You cannot post an empty tweet');
+      return $('.error').html('<i class="fa-solid fa-triangle-exclamation"></i>  You cannot post an empty tweet').slideDown();
     }
     if(tweetLength > 140){ 
-      return alert('You cannot post over 140 characters');
+      return $('.error').html('<i class="fa-solid fa-triangle-exclamation"></i>You cannot post over 140 characters').slideDown();
     }
+
+    $('form').trigger('reset');
+
     $.ajax({
       url: '/tweets',
       method: 'POST',
       data: data
     })
-    .then(() =>{
-      $('#tweet-text').val('');
-    })
-    .then(() =>{
+      .then(() =>{
       loadTweets();
     })
 
