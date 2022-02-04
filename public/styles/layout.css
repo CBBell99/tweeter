@@ -17,18 +17,32 @@ html {
  */
 
 body {
+  /* margin-top: 120px; */
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: "Source Sans Pro";
-
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-main{
-  margin: auto;
+main {
   background-color: #f4f1ec;
-  width: 90%
+  width: 90%;
+  margin: auto;
+}
+
+@media only screen and (min-width: 750px) {
+  body {
+    display: flex;
+  }
+  main {
+    margin: 120px 20px 10px 0;
+    width: 100%;
+  }
+
+  .avatar {
+    margin: 175px 50px 0 30px;
+  }
 }
