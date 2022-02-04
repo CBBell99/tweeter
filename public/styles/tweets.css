@@ -1,14 +1,15 @@
-.tweets{
+.tweets {
   width: 95%;
   margin: auto;
   margin-top: 15px;
-  height: 200px;
+  /* height: 200px; */
   background-color: #f4f1ec;
   border: 2px solid #545149;
   border-radius: 5px;
 }
 
-.tweets:hover{
+/* box shadow when hover over tweet */
+.tweets:hover {
   box-shadow: 5px 5px #9b9999;
 }
 
@@ -16,40 +17,43 @@ article .tweets {
   margin-top: 10px;
 }
 
-.tweets header{
+.tweets header {
   padding: 15px;
   display: flex;
   justify-content: space-between;
   align-content: center;
 }
 
-.tweets #userhandle{
-  opacity: 0.70;
+.tweets #userhandle {
+  opacity: 0.7;
 }
 
-.tweets .tweet-text{
+/* word-break on super long words. extreme edge case */
+.tweets .tweet-text {
   width: 95%;
   margin: auto;
   border-bottom: 2px solid #545149;
+  word-break: break-all;
 }
 
-.footer-info{
+.footer-info {
   width: 95%;
   margin: auto;
   display: flex;
   justify-content: space-between;
 }
 
- .footer-info p{
+.footer-info p {
   font-size: 0.75em;
-  margin-top: 5px;  
+  margin-top: 5px;
 }
 
-.footer-info .icons .fa-solid{
+.footer-info .icons .fa-solid {
   margin-top: 5px;
   font-size: 15px;
 }
 
-.footer-info .icons .fa-solid:hover{
+/* opacity on honver over icons */
+.footer-info .icons .fa-solid:hover {
   opacity: 0.5;
 }
