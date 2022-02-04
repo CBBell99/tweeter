@@ -31,3 +31,7 @@ nav .navbar {
   color: red;
   align-self: center;
 }
+
+#write-new-tweet .fas:hover {
+  opacity: 0.5;
+}
