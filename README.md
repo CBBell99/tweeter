@@ -16,3 +16,13 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- Body Parser
+- Chance
+- timeago.js
+
+## Dev Dependencies
+- nodemon
+
+!["Tweeter Desktop View"](https://github.com/CBBell99/tweeter/blob/master/docs/tweeter-desktop.png?raw=true)
+
+!["Tweeter Mobile View"](https://github.com/CBBell99/tweeter/blob/master/docs/tweeter-mobile.png?raw=true)
