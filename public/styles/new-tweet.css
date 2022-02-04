@@ -1,15 +1,15 @@
-.new-tweet{
-  width: 95%;
+.new-tweet {
+  width: 90%;
   margin: auto;
+  margin-top: 20px;
 }
 
-.new-tweet .tweet-top{
-  border-bottom:2px solid black ;
-  /* display: flex; */
+.new-tweet .tweet-top {
+  border-bottom: 2px solid black;
   padding-bottom: 10px;
 }
 
-.new-tweet #tweet-text{
+.new-tweet #tweet-text {
   background-color: #f4f1ec;
   border-radius: 5px;
   resize: none;
@@ -19,27 +19,27 @@
   border: none;
 }
 
-.new-tweet #tweet-text:focus{
+.new-tweet #tweet-text:focus {
   outline: none;
 }
 
-.new-tweet .tweet-bottom{
+.new-tweet .tweet-bottom {
   display: flex;
   padding-top: 10px;
   font-family: "Bungee", sans-serif;
   justify-content: space-between;
 }
 
-.new-tweet #tweet-button{
+.new-tweet #tweet-button {
   background-color: #4056a1;
   color: #ffffff;
 }
 
-.red-text{
+.red-text {
   color: red;
 }
 
-.error{
+.error {
   display: none;
   text-align: center;
   color: red;
