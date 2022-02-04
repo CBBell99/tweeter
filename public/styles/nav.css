@@ -22,11 +22,12 @@ nav .navbar{
 #write-new-tweet {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   padding-right: 1.5em;
   margin-bottom: 10px;
 }
-  
+
+
 
 #write-new-tweet .fas{
   color: red;
