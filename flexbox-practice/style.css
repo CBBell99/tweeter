@@ -1,0 +1,57 @@
+/* Do not edit this code, instead scroll down to the bottom and add new CSS rules! */
+
+/* In fact, don't even worry about the code here!! */
+
+.box {
+  flex: 1;
+  min-height: 150px;
+  font-size: 40px;
+  margin: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 66%;
+}
+
+.cde {
+  display: flex;
+}
+
+.bcdef {
+  display: flex;
+}
+
+.a {
+  background: #ec6443;
+}
+
+.b {
+  background: #48998d;
+}
+
+.c {
+  background: #c6d86d;
+}
+
+.d {
+  background: #54494b;
+}
+
+.e {
+  background: #b23c86;
+}
+
+.f {
+  background: #d83a3d;
+}
+
+.g {
+  background: #2f294d;
+}
+/* Add your code below */

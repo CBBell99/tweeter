@@ -3,7 +3,9 @@ nav {
 }
 
 nav .navbar {
-  background-color: #4056a1;
+  /* background-color: #4056a1; */
+  background-color: #8a651c; 
+   background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png"); 
   width: 100%;
   height: 120px;
   color: #ffffff;
@@ -11,6 +13,15 @@ nav .navbar {
   justify-content: space-between;
   z-index: 1;
   position: fixed;
+}
+
+@media only screen and (min-width: 750px) {
+ 
+  nav .navbar{
+  background-color:#4056a1;
+  background-image: none;
+  }
+    
 }
 
 #logo {
@@ -34,4 +45,6 @@ nav .navbar {
 
 #write-new-tweet .fas:hover {
   opacity: 0.5;
+  cursor: pointer;
 }
+

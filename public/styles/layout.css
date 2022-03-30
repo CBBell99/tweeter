@@ -29,20 +29,29 @@ body {
  */
 main {
   background-color: #f4f1ec;
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
 
 @media only screen and (min-width: 750px) {
+   
+  nav .navbar{
+  background-color:#4056a1;
+  background-image: none;
+  }
+  
   body {
     display: flex;
   }
+  
   main {
     margin: 150px 20px 10px 0;
-    width: 100%;
+    width: 70%;
   }
 
-  .avatar {
-    margin: 175px 50px 0 30px;
+  header.avatar {
+    margin: 170px 50px 0 30px;
+    width: 30%;
   }
 }
+

@@ -4,24 +4,24 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function () {
+$(document).ready(function() {
   // escape function
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-  $("#scroll-button").click(function () {
-    $([document.documentElement, document.body]).animate(
-      {
-        scrollTop: $("#tweet-text").offset().top,
-      },
-      0
-    );
+
+
+  //show input form when clicked
+  $("#scroll-button").click(() => {
+    $(".new-tweet").slideToggle("slow");
+    $("#tweet-text").focus();
   });
 
-  const createTweetElement = function (data) {
+  const createTweetElement = function(data) {
+    console.log(data)
     const timeAgo = timeago.format;
     let $tweet = `
     <article class="tweets">
@@ -48,7 +48,7 @@ $(document).ready(function () {
     return $tweet;
   };
 
-  const renderTweets = function (data) {
+  const renderTweets = function(data) {
     $(".tweets-container").empty();
     for (let tweet of data) {
       let oldTweet = createTweetElement(tweet);
@@ -56,19 +56,19 @@ $(document).ready(function () {
     }
   };
 
-  const loadTweets = function () {
+  const loadTweets = function() {
     $.ajax({
       url: "/tweets",
       method: "GET",
       dataType: "JSON",
-    }).then(function (data) {
+    }).then(function(data) {
       renderTweets(data);
     });
   };
 
   loadTweets();
 
-  $("#incoming-tweet").submit(function (event) {
+  $("#incoming-tweet").submit(function(event) {
     event.preventDefault();
     console.log("form had been submitted");
     const data = $("#incoming-tweet").serialize();
